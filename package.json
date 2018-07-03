@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dbarabashdev/authentication-server.git"
   },
-  "author":
-    "Dmitry Barabash <dbarabashdev@gmail.com> (https://github.com/dbarabashdev)",
+  "author": "Dmitry Barabash <dbarabashdev@gmail.com> (https://github.com/dbarabashdev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dbarabashdev/authentication-server/issues"
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/dbarabashdev/authentication-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0"
   }
 }
