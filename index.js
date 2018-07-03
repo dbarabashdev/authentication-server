@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const expressjwt = require('express-jwt');
 const cors = require('cors');
 
 const app = express();
@@ -13,6 +14,18 @@ const users = [
 
 app.use(bodyParser.json());
 app.use(cors());
+
+const jwtCheck = expressjwt({
+  secret: 'secretkey'
+});
+
+app.get('/resources', (req, res) => {
+  res.status(200).send('Public resources, you can see it');
+});
+
+app.get('/resources/secret', jwtCheck, (req, res) => {
+  res.status(200).send('Public resources, should be logged in to see this');
+});
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
